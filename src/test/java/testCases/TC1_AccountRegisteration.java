@@ -1,6 +1,5 @@
 package testCases;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -8,6 +7,7 @@ public class TC1_AccountRegisteration extends BaseTest {
 
 	@Test
 	public void validateReg() throws InterruptedException {
+		logger.info("*****validateReg started*****");
 		homepage.clickMyAccount();
 		homepage.clickRegister();
 		regpage.EnterFirstName("aman");
@@ -21,7 +21,7 @@ public class TC1_AccountRegisteration extends BaseTest {
 		regpage.clickContinue();
 
 		Assert.assertEquals(regpage.getSuccessText(), "Your Account Has Been Created!");
+		logger.info("*****validateReg finished*****");
 
 	}
-
 }
