@@ -13,12 +13,14 @@ import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjects.HomePage;
 import pageObjects.RegisterationPage;
+import utilities.ReadConfig;
 
 public class BaseTest {
 	protected WebDriver driver;
@@ -28,24 +30,11 @@ public class BaseTest {
 
 	@BeforeClass
 	@Parameters("browser")
-	public void setUp(String br) {
-		// Generate a unique log file name with timestamp
-		String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-		String logFileName = "logs/application_" + timestamp + ".log";
-		// Load the properties file
-		Properties logProperties = new Properties();
-		try {
-			logProperties.load(new FileInputStream("log4j.properties"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		// Set the log file name property
-		logProperties.setProperty("log4j.appender.file.File", logFileName);
-		// Apply the properties to Log4j
-		PropertyConfigurator.configure(logProperties);
-		logger = Logger.getLogger(this.getClass());
+	public void setUp(String browser) {
+		configureLogger();
 
-		switch (br.toLowerCase()) {
+		// Browser Setup
+		switch (browser.toLowerCase()) {
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
@@ -55,23 +44,24 @@ public class BaseTest {
 			driver = new FirefoxDriver();
 			break;
 		default:
-			System.out.println("Invalid browser name..");
-			return;
+			throw new IllegalArgumentException("Invalid browser name provided: " + browser);
 		}
 
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.manage().window().maximize();
 
-		driver.get("https://tutorialsninja.com/demo/");
+		driver.get(baseURL);
 		homepage = new HomePage(driver);
 		regpage = new RegisterationPage(driver);
 	}
 
-//	@AfterClass
-//	public void tearDown() {
-//		driver.quit();
-//	}
+	@AfterClass
+	public void tearDown() {
+		if (driver != null) {
+			driver.quit();
+		}
+	}
 
 	public String randomString() {
 		return RandomStringUtils.randomAlphabetic(5);
@@ -80,4 +70,40 @@ public class BaseTest {
 	public String randomNumber() {
 		return RandomStringUtils.randomNumeric(10);
 	}
+
+	private void configureLogger() {
+		// Generate a unique log file name with timestamp
+		String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+		String logFileName = "logs/application_" + timestamp + ".log";
+
+		// Load the log4j properties file
+		Properties logProperties = new Properties();
+		try (FileInputStream fis = new FileInputStream("log4j.properties")) {
+			logProperties.load(fis);
+		} catch (IOException e) {
+			e.printStackTrace();
+			throw new RuntimeException("Failed to load log4j properties file.");
+		}
+
+		// Set the log file name dynamically
+		logProperties.setProperty("log4j.appender.file.File", logFileName);
+
+		// Apply the properties to Log4j
+		PropertyConfigurator.configure(logProperties);
+		logger = Logger.getLogger(this.getClass());
+	}
+	
+	ReadConfig readconfig=new ReadConfig();
+	
+	public String baseURL=readconfig.getURL();
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

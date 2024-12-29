@@ -1,5 +1,7 @@
 package testCases;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -20,7 +22,7 @@ public class TC1_AccountRegisteration extends BaseTest {
 		regpage.clickAgreeCheckbox();
 		regpage.clickContinue();
 
-		Assert.assertEquals(regpage.getSuccessText(), "Your Account Has Been Created!");
+		AssertJUnit.assertEquals(regpage.getSuccessText(), "Your Account Has Been Created!");
 		logger.info("*****validateReg finished*****");
 
 	}
