@@ -9,7 +9,7 @@ public class ReadConfig {
 	Properties pro;
 
 	public ReadConfig() {
-
+		//reading config property file
 		File src = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties");
 		try {
 			FileInputStream fis = new FileInputStream(src);
