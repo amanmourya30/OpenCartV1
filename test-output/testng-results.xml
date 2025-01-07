@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-29T12:31:39 IST" name="Suite" finished-at="2024-12-29T12:31:53 IST" duration-ms="14200">
+  <suite started-at="2025-01-07T22:03:11 IST" name="Suite" finished-at="2025-01-07T22:03:23 IST" duration-ms="12016">
     <groups>
     </groups>
-    <test started-at="2024-12-29T12:31:39 IST" name="Test" finished-at="2024-12-29T12:31:53 IST" duration-ms="14200">
-      <class name="testCases.TC1_AccountRegisteration">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCases.TC1_AccountRegisteration@129b4fe2]" started-at="2024-12-29T12:31:39 IST" name="setUp" finished-at="2024-12-29T12:31:48 IST" duration-ms="8878" status="PASS">
+    <test started-at="2025-01-07T22:03:11 IST" name="Test" finished-at="2025-01-07T22:03:23 IST" duration-ms="12016">
+      <class name="testCases.TC2_LoginTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCases.TC2_LoginTest@129b4fe2]" started-at="2025-01-07T22:03:11 IST" name="setUp" finished-at="2025-01-07T22:03:19 IST" duration-ms="7664" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="validateReg()[pri:0, instance:testCases.TC1_AccountRegisteration@129b4fe2]" started-at="2024-12-29T12:31:48 IST" name="validateReg" finished-at="2024-12-29T12:31:53 IST" duration-ms="4963" status="PASS">
+        <test-method signature="verifyLogin()[pri:0, instance:testCases.TC2_LoginTest@129b4fe2]" started-at="2025-01-07T22:03:19 IST" name="verifyLogin" finished-at="2025-01-07T22:03:22 IST" duration-ms="3553" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateReg -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC1_AccountRegisteration@129b4fe2]" started-at="2024-12-29T12:31:53 IST" name="tearDown" finished-at="2024-12-29T12:31:53 IST" duration-ms="277" status="PASS">
+        </test-method> <!-- verifyLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC2_LoginTest@129b4fe2]" started-at="2025-01-07T22:03:22 IST" name="tearDown" finished-at="2025-01-07T22:03:23 IST" duration-ms="623" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC1_AccountRegisteration -->
+      </class> <!-- testCases.TC2_LoginTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -19,6 +19,8 @@ import org.testng.annotations.Parameters;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjects.HomePage;
+import pageObjects.LoginPage;
+import pageObjects.MyAccountPage;
 import pageObjects.RegisterationPage;
 import utilities.ReadConfig;
 
@@ -26,6 +28,8 @@ public class BaseTest {
 	protected WebDriver driver;
 	protected HomePage homepage;
 	protected RegisterationPage regpage;
+	protected LoginPage logpage;
+	protected MyAccountPage myAccpage;
 	public Logger logger;
 
 	@BeforeClass
@@ -54,6 +58,8 @@ public class BaseTest {
 		driver.get(baseURL);
 		homepage = new HomePage(driver);
 		regpage = new RegisterationPage(driver);
+		logpage = new LoginPage(driver);
+		myAccpage = new MyAccountPage(driver);
 	}
 
 	@AfterClass
@@ -96,7 +102,8 @@ public class BaseTest {
 	ReadConfig readconfig=new ReadConfig();
 	
 	public String baseURL=readconfig.getURL();
-	
+	public String email=readconfig.getUsername();
+	public String pass=readconfig.getpassword();
 	
 	
 	
