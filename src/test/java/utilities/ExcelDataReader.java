@@ -27,7 +27,7 @@ public class ExcelDataReader {
 
 			for (int i = 1; i < rowCount; i++) {
 				Row row = sheet.getRow(i);
-				for (int j = 0; j < columnCount; i++) {
+				for (int j = 0; j < columnCount; j++) {
 					data[i - 1][j] = row.getCell(j).toString();
 				}
 			}

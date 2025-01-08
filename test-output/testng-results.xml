@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-07T22:03:11 IST" name="Suite" finished-at="2025-01-07T22:03:23 IST" duration-ms="12016">
+  <suite started-at="2025-01-09T00:25:12 IST" name="Suite" finished-at="2025-01-09T00:25:54 IST" duration-ms="42058">
     <groups>
     </groups>
-    <test started-at="2025-01-07T22:03:11 IST" name="Test" finished-at="2025-01-07T22:03:23 IST" duration-ms="12016">
-      <class name="testCases.TC2_LoginTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCases.TC2_LoginTest@129b4fe2]" started-at="2025-01-07T22:03:11 IST" name="setUp" finished-at="2025-01-07T22:03:19 IST" duration-ms="7664" status="PASS">
+    <test started-at="2025-01-09T00:25:12 IST" name="Test" finished-at="2025-01-09T00:25:54 IST" duration-ms="42058">
+      <class name="testCases.TC3_LoginDDT">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCases.TC3_LoginDDT@531c311e]" started-at="2025-01-09T00:25:12 IST" name="setUp" finished-at="2025-01-09T00:25:32 IST" duration-ms="20179" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,95 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyLogin()[pri:0, instance:testCases.TC2_LoginTest@129b4fe2]" started-at="2025-01-07T22:03:19 IST" name="verifyLogin" finished-at="2025-01-07T22:03:22 IST" duration-ms="3553" status="PASS">
+        <test-method signature="verifyLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC3_LoginDDT@531c311e]" started-at="2025-01-09T00:25:34 IST" name="verifyLogin" data-provider="loginData" finished-at="2025-01-09T00:25:37 IST" duration-ms="3161" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[amanmourya579@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Auto@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Valid]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC2_LoginTest@129b4fe2]" started-at="2025-01-07T22:03:22 IST" name="tearDown" finished-at="2025-01-07T22:03:23 IST" duration-ms="623" status="PASS">
+        <test-method signature="verifyLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC3_LoginDDT@531c311e]" started-at="2025-01-09T00:25:37 IST" name="verifyLogin" data-provider="loginData" finished-at="2025-01-09T00:25:43 IST" duration-ms="6802" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[amaninvalid@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Qwerty@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogin -->
+        <test-method signature="verifyLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC3_LoginDDT@531c311e]" started-at="2025-01-09T00:25:43 IST" name="verifyLogin" data-provider="loginData" finished-at="2025-01-09T00:25:50 IST" duration-ms="6866" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[secondinvalidmail@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Qwerty@124]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogin -->
+        <test-method signature="verifyLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC3_LoginDDT@531c311e]" started-at="2025-01-09T00:25:50 IST" name="verifyLogin" data-provider="loginData" finished-at="2025-01-09T00:25:54 IST" duration-ms="3400" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[shivamvalidkumar@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Aman@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Valid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC3_LoginDDT@531c311e]" started-at="2025-01-09T00:25:54 IST" name="tearDown" finished-at="2025-01-09T00:25:54 IST" duration-ms="373" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC2_LoginTest -->
+      </class> <!-- testCases.TC3_LoginDDT -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -4,8 +4,9 @@
 	<test thread-count="5" name="Test">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<!-- <class name="testCases.TC1_AccountRegisteration" />-->
-			<class name="testCases.TC2_LoginTest" />
+			<!-- <class name="testCases.TC1_AccountRegisteration" />
+			<class name="testCases.TC2_LoginTest" />-->
+			<class name="testCases.TC3_LoginDDT" />
 		</classes>
 	</test> <!--
 	Test -->
